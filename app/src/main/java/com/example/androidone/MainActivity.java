@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private List<Integer> myDataset = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         // specify an adapter (see also next example)
-        List<Integer> myDataset = new ArrayList<>();
+
 
         for (int x = 1; x <= 100; x++) {
             myDataset.add(x);
@@ -51,8 +52,9 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Added plus 1 on the dataset", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                myDataset.add(myDataset.size()+1); // TODO not refreshed
             }
         });
     }
