@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
@@ -34,40 +37,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         // specify an adapter (see also next example)
-        String[] myDataset = {"001",
-                "002",
-                "003",
-                "004",
-                "005",
-                "006",
-                "007",
-                "008",
-                "009",
-                "010",
-                "011",
-                "012",
-                "013",
-                "014",
-                "015",
-                "016",
-                "017",
-                "018",
-                "019",
-                "020",
-                "021",
-                "022",
-                "023",
-                "024",
-                "025",
-                "025",
-                "027",
-                "028",
-                "029",
-                "030",
-                "031",
-                "032",
-                "033"};
+        List<Integer> myDataset = new ArrayList<>();
 
+        for (int x = 1; x <= 100; x++) {
+            myDataset.add(x);
+        }
 
         mAdapter = new MyAdapter(myDataset);
         recyclerView.setAdapter(mAdapter);
