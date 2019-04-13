@@ -52,9 +52,11 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Added plus 1 on the dataset", Snackbar.LENGTH_LONG)
+                myDataset.add(myDataset.size()+1);
+                mAdapter.notifyDataSetChanged();
+                Snackbar.make(view, "Added plus 1 on the dataset " + myDataset.size(), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                myDataset.add(myDataset.size()+1); // TODO not refreshed
+
             }
         });
     }
