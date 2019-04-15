@@ -53,10 +53,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 myDataset.add(myDataset.size()+1);
-                mAdapter.notifyDataSetChanged();
+
                 Snackbar.make(view, "Added plus 1 on the dataset " + myDataset.size(), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
+                mAdapter.notifyDataSetChanged();
+                recyclerView.smoothScrollToPosition(myDataset.size());
             }
         });
     }
